@@ -1,4 +1,4 @@
-/* 
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +9,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
+    
     background-color: #f8f9fa;
 }
 
@@ -18,7 +19,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(90deg, #2c3e50, #3498db);
+    background: linear-gradient(60deg, #2c3e50, #3498db);
     padding: 1.2rem 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -174,7 +175,7 @@ blockquote {
 }
 
 #skills ul li::before {
-    content: '▹';
+   
     color: #3498db;
     font-weight: bold;
     display: inline-block;
@@ -182,23 +183,16 @@ blockquote {
     margin-left: -1em;
 }
 
-#skills ol {
-    counter-reset: item;
-}
 
-#skills ol li {
-    counter-increment: item;
-}
 
 #skills ol li::before {
-    content: counter(item) ".";
+    
     color: #3498db;
     font-weight: bold;
     display: inline-block;
     width: 1.5em;
     margin-left: -1.5em;
 }
-
 
 table {
     width: 100%;
@@ -293,6 +287,7 @@ button[type="reset"]:hover {
     text-decoration: underline;
 }
 
+
 img, video, audio {
     border-radius: 5px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
@@ -307,12 +302,15 @@ footer {
     padding: 2rem;
     margin-top: 3rem;
 }
+hr{
+    margin-bottom: 30px;
+}
 
 footer p {
     margin: 0.5rem 0;
 }
 
-
+    
 @media (max-width: 768px) {
     .sidebar {
         padding: 1rem 0;
@@ -381,4 +379,4 @@ footer p {
         width: 150px;
         height: 150px;
     }
-} */
+}
