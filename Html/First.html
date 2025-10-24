@@ -1,152 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning HTML</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
 
-<header>
-    <h1>Learning HTML</h1>
-</header>
+    
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="services.html">Services</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
 
-<nav>
-    <a href="index.html">Home</a> |
-    <a href="about.html">About</a> |
-    <a href="services.html">Services</a> |
-    <a href="contact.html">Contact</a>
-</nav>
+    
+    <header>
+        <h1>Welcome to <mark>Learning HTML</mark></h1>
+        <p>Understand the structure and power of <strong>HTML5</strong> step-by-step!</p>
+    </header>
 
-<aside>
-    <h2>Related Topics</h2>
-    <ul>
-        <li><a href="#">HTML Basics</a></li>
-        <li><a href="#">CSS Introduction</a></li>
-        <li><a href="#">JavaScript Guide</a></li>
-    </ul>
-</aside>
+    
+    <aside>
+        <h2>Related Topics</h2>
+        <ul>
+            <li><a href="#">HTML Basics</a></li>
+            <li><a href="#">CSS Introduction</a></li>
+            <li><a href="#">JavaScript Guide</a></li>
+            <li><a href="#">Web Design Principles</a></li>
+        </ul>
+    </aside>
 
-<main>
-    <section>
-        <h2>HTML</h2>
-        <article>
-            It means HyperText <em>Markup</em> Language.
-            It is used to construct a website or web page.
-        </article>
-    </section>
-
-    <div>
-        <h2>This is a <u>div</u> section</h2>
-        <p>It is used to combine HTML elements.</p>
-    </div>
-</main>
-
-<p>H<sub>2</sub>O<sup>2</sup></p>
-
-<audio controls>
-    <source src="audio.mp3" type="audio/mpeg">
-    Your browser does not support the audio tag.
-</audio>
-<br>
-
-<video controls width="400">
-    <source src="movie.mp4" type="video/mp4">
-    <source src="movie.webm" type="video/webm">
-    Your browser does not support the video tag.
-</video>
-
-<iframe src="https://kiu.ac.bd" width="600" height="400" title="KIU Website"></iframe>
-
-<iframe 
-    width="560" 
-    height="315" 
-    src="https://www.youtube.com/embed/FZFdTY5FIHg?si=dIIS5MjC3C41ExJw"
-    title="YouTube video player" 
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin" 
-    allowfullscreen>
-</iframe>
-
-<ul>
-    <li>Orange</li>
-    <li>Banana</li>
-</ul>
-
-<dl>
-    <dt>Orange</dt>
-    <dd>A fruit that is orange in color.</dd>
-</dl>
-
-<ol>
-    <li>Pen</li>
-    <li>Pencil</li>
-    <li>Eraser</li>
-</ol>
-
-<table border="1">
-    <caption>Info Table</caption>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Semester</th>
-            <th>CGPA</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan="2">Mahadi</td>
-            <td>31</td>
-            <td>3.00</td>
-        </tr>
-        <tr>
-            <td>32</td>
-            <td>4.00</td>
-        </tr>
-        <tr>
-            <td colspan="2">Average</td>
-            <td>3.5</td>
-        </tr>
-        <tr>
-            <td colspan="3">Not bad</td>
-        </tr>
-    </tbody>
-</table>
-
-<input type="search" name="search" placeholder="Search..."><br><br>
-
-<form action="#" method="post">
-    <fieldset>
-
-        <legend>Personal Info</legend>
-
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
-
-        <label for="desc">Description:</label>
-        <textarea id="desc" name="desc"></textarea><br><br>
-
-        <label for="option">Choose a number:</label>
-        <select id="option" name="option">
-            <option value="1">1</option>
-            <option value="2">2</option>
-        </select><br><br>
+    
+    <main>
 
         
-        <input type="radio" name="choice" value="yes"> Yes
-        <input type="radio" name="choice" value="yes"> Middle
-        <input type="radio" name="choice" value="no"> No<br><br>
+        <section>
+            <h2>What is HTML?</h2>
+            <article>
+                <p>HTML stands for <strong>HyperText Markup Language</strong>. It is the foundation of every web page.</p>
+                <p>HTML uses <em>tags</em> to define the structure and elements of a web page such as headings, paragraphs, images, and links.</p>
+            </article>
+        </section>
 
-        <input type="submit" value="Submit">
-    </fieldset>
-</form>
+        
+        <section>
+            <h2>Multimedia Elements</h2>
+            <p>HTML supports embedding <strong>audio</strong> and <strong>video</strong> files easily.</p>
 
+            <audio controls>
+                <source src="audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <br><br>
 
-<footer>
-    &copy; All rights reserved by Mahadi Hassan
-</footer>
+            <video controls width="400">
+                <source src="movie.mp4" type="video/mp4">
+                <source src="movie.webm" type="video/webm">
+                Your browser does not support the video element.
+            </video>
+
+            <figure>
+                <img src="example.jpg" alt="HTML Example Image" width="400">
+                <figcaption>An example of an HTML image element.</figcaption>
+            </figure>
+        </section>
+
+        
+        <section>
+            <h2>Embedding External Content</h2>
+            <iframe src="https://kiu.ac.bd" width="600" height="400" title="KIU Website"></iframe>
+            <br><br>
+
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/FZFdTY5FIHg"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </section>
+
+        <section>
+            <h2>Lists in HTML</h2>
+
+            <p><strong>Unordered List:</strong></p>
+            <ul>
+                <li>Orange</li>
+                <li>Banana</li>
+                <li>Mango</li>
+            </ul>
+
+            <p><strong>Ordered List:</strong></p>
+            <ol>
+                <li>Pen</li>
+                <li>Pencil</li>
+                <li>Eraser</li>
+            </ol>
+
+            <p><strong>Description List:</strong></p>
+            <dl>
+                <dt>HTML</dt>
+                <dd>A markup language for creating web pages.</dd>
+                <dt>CSS</dt>
+                <dd>A style sheet language for designing web pages.</dd>
+            </dl>
+        </section>
+
+        
+        <section>
+            <h2>Table Example</h2>
+            <table border="1">
+                <caption>Student Information Table</caption>
+                <thead>
+                    <tr>
+                        <th colspan="4">Personal Information</th>
+                        <th colspan="4">Academic Information</th>
+                    </tr>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Contact</th>
+                        <th>Department</th>
+                        <th>Session</th>
+                        <th>Year</th>
+                        <th>Semester</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mahadi</td>
+                        <td>Kishoreganj</td>
+                        <td>0178xxxxxxxx</td>
+                        <td>CSE</td>
+                        <td>2021-22</td>
+                        <td>3rd</td>
+                        <td>1st</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Hasib</td>
+                        <td>Dhaka</td>
+                        <td>0177xxxxxxxx</td>
+                        <td>EEE</td>
+                        <td>2020-21</td>
+                        <td>4th</td>
+                        <td>2nd</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Sarafat</td>
+                        <td>Rajshahi</td>
+                        <td>0183xxxxxxxx</td>
+                        <td>BBA</td>
+                        <td>2022-23</td>
+                        <td>2nd</td>
+                        <td>1st</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>HTML Form Example</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+
+                    <label for="desc">Description:</label>
+                    <textarea id="desc" name="desc" placeholder="Write something about yourself"></textarea><br><br>
+
+                    <label for="option">Choose a number:</label>
+                    <select id="option" name="option">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select><br><br>
+
+                    <p>Do you like HTML?</p>
+                    <input type="radio" name="choice" value="yes"> Yes
+                    <input type="radio" name="choice" value="maybe"> Maybe
+                    <input type="radio" name="choice" value="no"> No<br><br>
+
+                    <label for="file">Upload File:</label>
+                    <input type="file" id="file" name="file"><br><br>
+
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </fieldset>
+            </form>
+        </section>
+
+        
+        <section>
+            <h2>Progress Example</h2>
+            <p>HTML Learning Progress:</p>
+            <progress value="70" max="100"></progress> 70%
+        </section>
+
+        
+        <section>
+            <h2>Expandable Info (Details Tag)</h2>
+            <details>
+                <summary>Click to read more about HTML</summary>
+                <p>HTML continues to evolve through versions like HTML5, focusing on better structure, multimedia support, and accessibility for modern web design.</p>
+            </details>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 All rights reserved by <strong>Mahadi Hassan</strong></p>
+        <p>Made with  using pure HTML.</p>
+    </footer>
 
 </body>
+
 </html>
