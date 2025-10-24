@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning HTML</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<header>
+    <h1>Learning HTML</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="services.html">Services</a> |
+    <a href="contact.html">Contact</a>
+</nav>
+
+<aside>
+    <h2>Related Topics</h2>
+    <ul>
+        <li><a href="#">HTML Basics</a></li>
+        <li><a href="#">CSS Introduction</a></li>
+        <li><a href="#">JavaScript Guide</a></li>
+    </ul>
+</aside>
+
+<main>
+    <section>
+        <h2>HTML</h2>
+        <article>
+            It means HyperText <em>Markup</em> Language.
+            It is used to construct a website or web page.
+        </article>
+    </section>
+
+    <div>
+        <h2>This is a <u>div</u> section</h2>
+        <p>It is used to combine HTML elements.</p>
+    </div>
+</main>
+
+<p>H<sub>2</sub>O<sup>2</sup></p>
+
+<audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+<br>
+
+<video controls width="400">
+    <source src="movie.mp4" type="video/mp4">
+    <source src="movie.webm" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+
+<iframe src="https://kiu.ac.bd" width="600" height="400" title="KIU Website"></iframe>
+
+<iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/FZFdTY5FIHg?si=dIIS5MjC3C41ExJw"
+    title="YouTube video player" 
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+</iframe>
+
+<ul>
+    <li>Orange</li>
+    <li>Banana</li>
+</ul>
+
+<dl>
+    <dt>Orange</dt>
+    <dd>A fruit that is orange in color.</dd>
+</dl>
+
+<ol>
+    <li>Pen</li>
+    <li>Pencil</li>
+    <li>Eraser</li>
+</ol>
+
+<table border="1">
+    <caption>Info Table</caption>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Semester</th>
+            <th>CGPA</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="2">Mahadi</td>
+            <td>31</td>
+            <td>3.00</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>4.00</td>
+        </tr>
+        <tr>
+            <td colspan="2">Average</td>
+            <td>3.5</td>
+        </tr>
+        <tr>
+            <td colspan="3">Not bad</td>
+        </tr>
+    </tbody>
+</table>
+
+<input type="search" name="search" placeholder="Search..."><br><br>
+
+<form action="#" method="post">
+    <fieldset>
+
+        <legend>Personal Info</legend>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="desc">Description:</label>
+        <textarea id="desc" name="desc"></textarea><br><br>
+
+        <label for="option">Choose a number:</label>
+        <select id="option" name="option">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select><br><br>
+
+        
+        <input type="radio" name="choice" value="yes"> Yes
+        <input type="radio" name="choice" value="yes"> Middle
+        <input type="radio" name="choice" value="no"> No<br><br>
+
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+
+
+<footer>
+    &copy; All rights reserved by Mahadi Hassan
+</footer>
+
+</body>
+</html>
