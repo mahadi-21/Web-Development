@@ -1,0 +1,19 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    position: fixed;box-sizing: content-box;
+
+    background:linear-gradient(90deg,blue,indigo);
+}
+.navlink{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+.navlink a{
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
