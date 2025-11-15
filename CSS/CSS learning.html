@@ -1129,52 +1129,6 @@
         </div>
     </footer>
 
-    <script>
-        // Simple theme switcher for demonstration
-        function setTheme(theme) {
-            document.querySelectorAll('.theme-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            const root = document.documentElement;
-            
-            if (theme === 'dark') {
-                root.style.setProperty('--primary', '#8b5cf6');
-                root.style.setProperty('--primary-dark', '#7c3aed');
-                root.style.setProperty('--secondary', '#34d399');
-                root.style.setProperty('--accent', '#f59e0b');
-                root.style.setProperty('--dark', '#f8fafc');
-                root.style.setProperty('--light', '#1e293b');
-                root.style.setProperty('--gray', '#cbd5e1');
-            } else if (theme === 'colorful') {
-                root.style.setProperty('--primary', '#ec4899');
-                root.style.setProperty('--primary-dark', '#db2777');
-                root.style.setProperty('--secondary', '#06b6d4');
-                root.style.setProperty('--accent', '#84cc16');
-            } else {
-                // Reset to default
-                root.style.setProperty('--primary', '#6366f1');
-                root.style.setProperty('--primary-dark', '#4f46e5');
-                root.style.setProperty('--secondary', '#10b981');
-                root.style.setProperty('--accent', '#f59e0b');
-                root.style.setProperty('--dark', '#1e293b');
-                root.style.setProperty('--light', '#f8fafc');
-                root.style.setProperty('--gray', '#64748b');
-            }
-        }
-        
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.8)';
-                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.05)';
-            }
-        });
-    </script>
+    
 </body>
 </html>
