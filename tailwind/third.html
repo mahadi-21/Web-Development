@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kishoreganj University Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white shadow">
+
+        <!-- Nav -->
+        <nav class="flex justify-between items-center px-6 py-3 relative">
+
+            <!-- Logo -->
+            <div>
+                <img src="../download.png" alt="Logo" class="h-16 w-16">
+            </div>
+
+            <!-- Navlist (used for desktop & mobile both) -->
+            <div id="navlist" class="hidden md:flex md:items-center md:gap-4">
+
+                <a href="#" class="block px-4 py-2 rounded hover:bg-blue-900 hover:text-white transition w-full md:w-auto">
+                    Home
+                </a>
+
+                <!-- Academics Dropdown (Desktop Only) -->
+                <div class="relative group sm:block hidden ">
+                    <button class="flex items-center gap-1 px-4 py-2 rounded hover:bg-blue-900 hover:text-white transition">
+                        Academics
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+
+                    <div class="absolute left-0 top-full bg-white shadow-lg py-2 w-40 hidden group-hover:block">
+                        <a href="#" class="block px-3 py-2 hover:bg-blue-900 hover:text-white">CSE</a>
+                        <a href="#" class="block px-3 py-2 hover:bg-blue-900 hover:text-white">ENG</a>
+                        <a href="#" class="block px-3 py-2 hover:bg-blue-900 hover:text-white">MAT</a>
+                        <a href="#" class="block px-3 py-2 hover:bg-blue-900 hover:text-white">ACC</a>
+                    </div>
+                </div>
+
+                
+
+                <!-- Offices Dropdown (Desktop Only) -->
+                <div class="relative group sm:block hidden">
+                    <button class="flex items-center gap-1 px-4 py-2 rounded hover:bg-blue-900 hover:text-white transition">
+                        Offices
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+
+                    <div class="absolute left-0 top-full bg-white shadow-lg py-2 w-40 hidden group-hover:block">
+                        <a href="#" class="block px-3 py-2 hover:bg-blue-900 hover:text-white">VC Office</a>
+                        <a href="#" class="block px-3 py-2 hover:bg-blue-900 hover:text-white">Pro-VC Office</a>
+                        <a href="#" class="block px-3 py-2 hover:bg-blue-900 hover:text-white">Register Office</a>
+                        <a href="#" class="block px-3 py-2 hover:bg-blue-900 hover:text-white">CSE Office</a>
+                    </div>
+                </div>
+
+                <a href="#" class="block md:hidden px-4 py-2 hover:bg-blue-900 hover:text-white w-full">
+                    Offices
+                </a>
+
+                <!-- Regular Links -->
+                <a href="#" class="block px-4 py-2 rounded hover:bg-blue-900 hover:text-white transition w-full md:w-auto">
+                    About
+                </a>
+                <a href="#" class="block px-4 py-2 hover:bg-blue-900 hover:text-white transition w-full md:w-auto">
+                    Events
+                </a>
+                <a href="#" class="block px-4 py-2 hover:bg-blue-900 hover:text-white transition w-full md:w-auto">
+                    Notices
+                </a>
+
+            </div>
+
+            <!-- Hamburger Button -->
+            <button id="hamburger" class="md:hidden text-3xl">☰</button>
+        </nav>
+
+        <!-- Banner -->
+        <div class="text-white text-center py-2 text-xl bg-blue-900" id="banner">
+            Kishoreganj University
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="pt-[150px] px-6">
+        <h1 class="text-2xl font-bold">Welcome to Kishoreganj University</h1>
+        <p class="mt-4">This is your main content area.</p>
+    </div>
+
+    <!-- Mobile Toggle Script -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navlist = document.getElementById('navlist');
+        const banner = document.getElementById('banner');
+
+        hamburger.addEventListener('click', () => {
+            navlist.classList.toggle('hidden');
+            navlist.classList.toggle('flex');
+            navlist.classList.toggle('flex-col');
+            navlist.classList.toggle('absolute');
+            navlist.classList.toggle('left-0');
+            navlist.classList.toggle('top-full');
+            navlist.classList.toggle('w-full');
+            navlist.classList.toggle('bg-white');
+            navlist.classList.toggle('shadow');
+            navlist.classList.toggle('p-4');
+            navlist.classList.toggle('space-y-2');
+            banner.classList.toggle('mt-[365px]');
+        });
+    </script>
+
+</body>
+</html>
