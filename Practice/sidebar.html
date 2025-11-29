@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="flex">
+        <!-- Sidebar -->
+        <div id="sidebar" class="hidden md:block min-h-screen bg-blue-600 text-white w-56 p-4">
+            <a href="" class="block mt-3 hover:bg-blue-900 rounded p-2 text-center">A</a>
+            <a href="" class="block mt-3 hover:bg-blue-900 rounded p-2 text-center">B</a>
+            <a href="" class="block mt-3 hover:bg-blue-900 rounded p-2 text-center">C</a>
+            <a href="" class="block mt-3 hover:bg-blue-900 rounded p-2 text-center">D</a>
+            <a href="" class="block mt-3 hover:bg-blue-900 rounded p-2 text-center">E</a>
+            <a href="" class="block mt-3 hover:bg-blue-900 rounded p-2 text-center">F</a>
+            <a href="" class="block mt-3 hover:bg-blue-900 rounded p-2 text-center">G</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-4">
+            <button class="mt-4 bg-blue-600 text-white p-2 rounded md:hidden" id="btn">
+                ☰
+            </button>
+            <h1 class="text-2xl font-bold mt-4">This is main Content</h1>
+            <p class="mt-2">The sidebar is hidden on mobile and can be toggled with the button.</p>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const side = document.getElementById('sidebar');
+        
+        btn.addEventListener('click', () => {
+            side.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Sidebar with Submenu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex min-h-screen bg-gray-100">
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="w-56 bg-blue-800 text-white p-4 space-y-2 hidden md:block">
+        <h2 class="text-xl font-bold mb-4">Menu</h2>
+        <a href="#" class="block px-3 py-2 rounded bg-blue-700">Home</a>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-blue-700">About</a>
+        
+        <!-- Services with Submenu -->
+        <div class="group">
+            <div class="flex justify-between items-center px-3 py-2 rounded hover:bg-blue-700 cursor-pointer" id="servicebtn">
+                <span>Services</span>
+                <span class="text-xs transform transition-transform duration-300" id="arrow">▼</span>
+            </div>
+            <div class="hidden mt-1 ml-4 space-y-1" id="submenu">
+                <a href="#" class="block px-3 py-2 rounded bg-blue-600 hover:bg-blue-900 text-sm">Washing</a>
+                <a href="#" class="block px-3 py-2 rounded bg-blue-600 hover:bg-blue-900 text-sm">Repairing</a>
+                <a href="#" class="block px-3 py-2 rounded bg-blue-600 hover:bg-blue-900 text-sm">Recycling</a>
+            </div>
+        </div>
+        
+        <a href="#" class="block px-3 py-2 rounded hover:bg-blue-700">Students</a>
+        <a href="#" class="block px-3 py-2 rounded hover:bg-blue-700">Contact</a>
+    </div>
+
+    <!-- Content Area -->
+    <div class="flex-1 p-6">
+        <!-- Toggle Button -->
+        <button id="btn" class="mb-4 bg-blue-600 text-white px-4 py-2 rounded md:hidden">
+            ☰ 
+        </button>
+        <img src="../download.png" alt="" class="w-32 h-32 rounded-[30px] hover:translate-x-[180px] hover:translate-y-[180px] hover:rotate-180 transition duration-[2000ms]">
+        
+     </div>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const sidebar = document.getElementById('sidebar');
+        const serviceBtn = document.getElementById('servicebtn');
+        const submenu = document.getElementById('submenu');
+        const arrow = document.getElementById('arrow');
+
+        // Toggle sidebar on mobile
+        btn.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+
+        // Toggle submenu
+        serviceBtn.addEventListener('click', () => {
+            submenu.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        });
+    </script>
+</body>
+</html>
