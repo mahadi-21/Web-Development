@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahadi Hassan Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<body class="font-sans">
+
+    <!-- Navbar -->
+    <nav class="flex justify-center shadow-md py-2 bg-white sticky top-0 z-50">
+        <a href="#about" class="hover:bg-blue-100 hover:text-blue-900 w-28 p-2 text-xl mx-2 rounded-full text-center transition">About</a>
+        <a href="#skills" class="hover:bg-blue-100 hover:text-blue-900 w-28 p-2 text-xl mx-2 rounded-full text-center transition">Skills</a>
+        <a href="#projects" class="hover:bg-blue-100 hover:text-blue-900 w-28 p-2 text-xl mx-2 rounded-full text-center transition">Projects</a>
+        <a href="#contact" class="hover:bg-blue-100 hover:text-blue-900 w-28 p-2 text-xl mx-2 rounded-full text-center transition">Contact</a>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="flex flex-col md:flex-row items-center p-8 gap-8">
+        <div class="md:w-2/3">
+            <h1 class="text-[32px] font-bold border-b-4 border-blue-600 w-fit mb-4 text-gray-900">About</h1>
+            <p class="text-xl text-gray-800">
+                I am a web developer studying at Kishoreganj University in the Department of Computer Science and Engineering.
+                I am experienced in Database Management Systems and server-side development. I have completed three projects: two in Laravel and one in Java Swing. I always try my best to satisfy my clients.
+            </p>
+        </div>
+        <div class="md:w-1/3 flex justify-center">
+            <img src="download.png" class="w-48 h-64 rounded-[20px] shadow-lg" alt="Mahadi Hassan">
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="p-8">
+        <h1 class="text-[32px] font-bold border-b-4 border-blue-600 w-fit mb-4 text-gray-900">Skills</h1>
+        <ol class="list-decimal pl-6 text-xl space-y-1 text-gray-800">
+            <li>C</li>
+            <li>C++</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>PHP</li>
+            <li>Java Swing</li>
+            <li>Laravel</li>
+        </ol>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="p-8">
+        <h1 class="text-[32px] font-bold border-b-4 border-blue-600 w-fit mb-6 text-gray-900">Projects</h1>
+        <div class="flex flex-wrap justify-center gap-6">
+            <!-- Project 1 -->
+            <div class="border border-gray-300 p-4 shadow-xl rounded-xl w-[280px] flex flex-col bg-white transition transform hover:scale-105 hover:shadow-2xl">
+                <img src="download.png" alt="" class="w-full rounded mb-2">
+                <hr class="h-1 w-full my-4 rounded bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 border-0">
+                <h1 class="mt-2 font-bold text-lg text-gray-900">University Library Management System</h1>
+                <p class="text-sm line-clamp-3 text-gray-700">
+                    A wonderful user-friendly LIMS where a user can easily borrow a book from the library by request. A librarian can manage book entry and exit, and university authorities can track history.
+                </p>
+                <a href="#" class="text-blue-600 mt-auto hover:text-blue-400 text-sm font-semibold">See more</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="border border-gray-300 p-4 shadow-xl rounded-xl w-[280px] flex flex-col bg-white transition transform hover:scale-105 hover:shadow-2xl">
+                <img src="download.png" alt="" class="w-full rounded mb-2">
+                <hr class="h-1 w-full my-4 rounded bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 border-0">
+                <h1 class="mt-2 font-bold text-lg text-gray-900">University Hall Meal Management System</h1>
+                <p class="text-sm line-clamp-3 text-gray-700">
+                    A user-friendly UHMMS where a user can manage meals easily. Meal managers can track all meals, bazar, and related expenses efficiently.
+                </p>
+                <a href="#" class="text-blue-600 mt-auto hover:text-blue-400 text-sm font-semibold">See more</a>
+            </div>
+        </div>
+        <div class="text-center mt-6">
+            <a href="#" class="font-bold text-blue-600 hover:text-blue-400">View All Projects</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="p-8">
+        <h1 class="text-[32px] font-bold border-b-4 border-blue-600 w-fit mb-6 text-gray-900">Contact</h1>
+        <div class="flex flex-col gap-4 text-xl text-gray-800">
+            <div class="flex items-center gap-2">
+                <i class="fab fa-facebook w-6 h-6 text-blue-500"></i>
+                <a href="#" class="hover:text-blue-400 underline">Mahadi Hassan</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <i class="fab fa-github w-6 h-6 text-gray-700"></i>
+                <a href="#" class="hover:text-gray-500 underline">Mahadi Hassan</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <i class="fas fa-envelope w-6 h-6 text-green-500"></i>
+                <a href="mailto:example@example.com" class="hover:text-green-400 underline">Mahadi Hassan</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <i class="fab fa-linkedin w-6 h-6 text-blue-700"></i>
+                <a href="#" class="hover:text-blue-400 underline">Mahadi Hassan</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <i class="fab fa-whatsapp w-6 h-6 text-green-500"></i>
+                <a href="#" class="hover:text-green-400 underline">Mahadi Hassan</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <i class="fas fa-phone w-6 h-6 text-yellow-500"></i>
+                <a href="tel:+1234567890" class="hover:text-yellow-400 underline">+1234567890</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; All rights reserved by Mahadi Hassan 2025
+    </footer>
+
+</body>
+
+</html>
