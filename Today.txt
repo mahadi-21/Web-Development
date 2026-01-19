@@ -1,0 +1,111 @@
+Array (Indexed)
+Array(Associative)
+Array Multidimensional
+String Manipulation (strlen(),strupper(), strlower(), str_replace("world","php",$str),
+substr(),trim(),strpos(), explode(), implode())
+
+Regular expression (preg_match(),preg_replace(),preg_split())
+
+File handling(write file,append file,read)
+
+
+3. Read from a File
+echo file_get_contents("example.txt"); // Read entire file
+$handle = fopen("example.txt", "r");  // Read line by line
+while(!feof($handle)){
+    echo fgets($handle) . "<br>";
+}
+fclose($handle);
+
+
+Error and exception
+
+OOP
+
+
+Database
+types of database
+ER - Diagram
+Cardinality
+Crud Operation
+Transaction (a set of sql operations as a single uint) roll back and commit 
+
+Session and Cookies
+authentication
+file upload and validation
+
+
+-----Super Global Variable----
+$globals
+$_SERVER
+$_REQUEST
+$_POST
+$_GET
+$_ENV & $_COOKIE
+$_SESSION
+$_GET
+$_FILES
+
+------SERVER VARABLE-------
+echo $_SERVER['PHP_SELF'];
+echo $_SERVER['SERVER_NAME'];
+echo $_SERVER['HTTP_HOST'];
+echo $_SERVER['HTTP_REFERER'];
+echo $_SERVER['HTTP_USER_AGENT'];
+echo $_SERVER['SCRIPT_NAME'];
+
+
+$_REQUEST is a PHP super global variable which contains submitted form data, and all cookie data.
+$_REQUEST is an array containing data from $_GET, $_POST, and $_COOKIE.
+
+$_GET and $_POST
+
+$COOKIE
+
+A cookie is often used to identify a user. A cookie is a small file that the server embeds on the user's computer. Each time the same computer requests a page with a browser, it will send the cookie too.
+
+setcookie("","",time()+3000)
+
+
+
+
+
+$_SESSION
+A session is a way to store information (in variables) to be used across multiple pages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------PHP Laravel-----
+Introduction
+MVC
+Composer 
+Library
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
