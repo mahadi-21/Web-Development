@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System using Laravel</title>
+    <style>
+        body {
+            font-family: 'Calibri', Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1f4e78;
+            text-align: center;
+            border-bottom: 3px solid #1f4e78;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #2e5c8a;
+            margin-top: 30px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #2e5c8a;
+            margin-top: 20px;
+        }
+        .btn-download {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 15px;
+            background: #1f4e78;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .btn-download:hover {
+            background: #2e5c8a;
+        }
+        ul, ol {
+            line-height: 1.8;
+        }
+        strong {
+            color: #1f4e78;
+        }
+        .divider {
+            border-top: 1px solid #ddd;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="content">
+        <h1>Student Management System using Laravel</h1>
+        
+        <button class="btn-download" onclick="generateDocx()">📥 Download as DOCX</button>
+        
+        <div class="divider"></div>
+        
+        <h2>1. Project Title</h2>
+        <p><strong>Student Management System</strong></p>
+        
+        <div class="divider"></div>
+        
+        <h2>2. Project Description</h2>
+        <p>The Student Management System is a web-based application developed using the Laravel framework that helps manage student records efficiently. It allows administrators to add, update, view, and delete student details, manage courses, and handle enrollments. The system provides a centralized platform for educational institutions to maintain and organize student information, course offerings, and enrollment records in a systematic and user-friendly manner.</p>
+        
+        <div class="divider"></div>
+        
+        <h2>3. Users of the System</h2>
+        <p>The system is designed to accommodate two types of users:</p>
+        
+        <h3>Primary User:</h3>
+        <ul>
+            <li><strong>Admin</strong> – Full administrative privileges to manage all aspects of the system</li>
+        </ul>
+        
+        <h3>Secondary User (Optional):</h3>
+        <ul>
+            <li><strong>Student</strong> – Limited access to view personal information and enrolled courses (if login functionality is implemented)</li>
+        </ul>
+        
+        <div class="divider"></div>
+        
+        <h2>4. Functional Requirements (Features)</h2>
+        
+        <h3>4.1 Admin Features</h3>
+        <p>The administrator has complete control over the system with the following capabilities:</p>
+        
+        <p><strong>Authentication Management</strong></p>
+        <ul>
+            <li>Login to the system with secure credentials</li>
+            <li>Logout from the system</li>
+        </ul>
+        
+        <p><strong>Student Management</strong></p>
+        <ul>
+            <li>Add new student records to the database</li>
+            <li>Edit existing student information</li>
+            <li>Delete student records from the system</li>
+            <li>View comprehensive list of all students</li>
+        </ul>
+        
+        <p><strong>Course Management</strong></p>
+        <ul>
+            <li>Add new courses to the system</li>
+            <li>Edit existing course details</li>
+            <li>Delete courses from the database</li>
+            <li>View complete list of all available courses</li>
+        </ul>
+        
+        <p><strong>Enrollment Management</strong></p>
+        <ul>
+            <li>Enroll students in specific courses</li>
+            <li>Manage enrollment records</li>
+            <li>View enrollment details and history</li>
+        </ul>
+        
+        <h3>4.2 Student Features (Optional Implementation)</h3>
+        <p>If student login functionality is implemented, students will have access to:</p>
+        
+        <p><strong>Authentication</strong></p>
+        <ul>
+            <li>Login to the system using student credentials</li>
+        </ul>
+        
+        <p><strong>Profile Management</strong></p>
+        <ul>
+            <li>View personal profile information</li>
+            <li>Access contact details and academic information</li>
+        </ul>
+        
+        <p><strong>Course Information</strong></p>
+        <ul>
+            <li>View list of enrolled courses</li>
+            <li>Access course details and enrollment dates</li>
+        </ul>
+        
+        <div class="divider"></div>
+        
+        <h2>5. Entities (For ER Diagram)</h2>
+        <p>The Student Management System consists of four primary entities:</p>
+        <ol>
+            <li><strong>Student</strong> – Represents individual students in the system</li>
+            <li><strong>Course</strong> – Represents academic courses offered by the institution</li>
+            <li><strong>Enrollment</strong> – Represents the relationship between students and courses</li>
+            <li><strong>Admin</strong> – Represents system administrators with management privileges</li>
+        </ol>
+        
+        <div class="divider"></div>
+        
+        <h2>6. Attributes</h2>
+        
+        <h3>6.1 Student Entity</h3>
+        <p>The Student entity contains the following attributes:</p>
+        <ul>
+            <li><strong>student_id</strong> (Primary Key) – Unique identifier for each student</li>
+            <li><strong>name</strong> – Full name of the student</li>
+            <li><strong>email</strong> – Email address for communication</li>
+            <li><strong>phone</strong> – Contact phone number</li>
+            <li><strong>date_of_birth</strong> – Date of birth of the student</li>
+        </ul>
+        
+        <h3>6.2 Course Entity</h3>
+        <p>The Course entity includes the following attributes:</p>
+        <ul>
+            <li><strong>course_id</strong> (Primary Key) – Unique identifier for each course</li>
+            <li><strong>course_name</strong> – Name/title of the course</li>
+            <li><strong>credits</strong> – Number of credit hours for the course</li>
+            <li><strong>duration</strong> – Duration or length of the course</li>
+        </ul>
+        
+        <h3>6.3 Enrollment Entity</h3>
+        <p>The Enrollment entity serves as a junction table with these attributes:</p>
+        <ul>
+            <li><strong>enrollment_id</strong> (Primary Key) – Unique identifier for each enrollment record</li>
+            <li><strong>student_id</strong> (Foreign Key) – References the Student entity</li>
+            <li><strong>course_id</strong> (Foreign Key) – References the Course entity</li>
+            <li><strong>enrollment_date</strong> – Date when the student enrolled in the course</li>
+        </ul>
+        
+        <h3>6.4 Admin Entity</h3>
+        <p>The Admin entity contains authentication and identification attributes:</p>
+        <ul>
+            <li><strong>admin_id</strong> (Primary Key) – Unique identifier for each administrator</li>
+            <li><strong>username</strong> – Username for admin login</li>
+            <li><strong>password</strong> – Encrypted password for secure authentication</li>
+        </ul>
+        
+        <div class="divider"></div>
+        
+        <h2>7. Relationships</h2>
+        <p>The Student Management System implements the following relationships between entities:</p>
+        
+        <h3>7.1 Student and Course Relationship</h3>
+        <ul>
+            <li><strong>Relationship Type:</strong> Many-to-Many</li>
+            <li><strong>Description:</strong> A student can enroll in multiple courses, and a course can have multiple students enrolled</li>
+            <li><strong>Implementation:</strong> This relationship is established through the Enrollment entity, which acts as an intermediary table</li>
+            <li><strong>Flow:</strong> Student → Enrollment → Course</li>
+        </ul>
+        
+        <p>The enrollment table captures the many-to-many relationship by storing foreign keys referencing both the students and courses tables, along with additional information such as the enrollment date.</p>
+        
+        <div class="divider"></div>
+        
+        <h2>8. Database Tables (Laravel Friendly)</h2>
+        <p>The system uses the following database tables structured according to Laravel conventions:</p>
+        
+        <h3>8.1 students</h3>
+        <p>Stores all student-related information with fields corresponding to the Student entity attributes.</p>
+        
+        <h3>8.2 courses</h3>
+        <p>Maintains records of all available courses with details such as course name, credits, and duration.</p>
+        
+        <h3>8.3 enrollments</h3>
+        <p>Serves as a pivot table managing the many-to-many relationship between students and courses, including enrollment metadata.</p>
+        
+        <h3>8.4 admins</h3>
+        <p>Contains administrator credentials and information for system access control and authentication.</p>
+        
+        <div class="divider"></div>
+        
+        <h2>9. Technology Stack</h2>
+        <ul>
+            <li><strong>Framework:</strong> Laravel (PHP)</li>
+            <li><strong>Database:</strong> MySQL/PostgreSQL</li>
+            <li><strong>Frontend:</strong> Blade Templates, Bootstrap/Tailwind CSS</li>
+            <li><strong>Authentication:</strong> Laravel built-in authentication</li>
+        </ul>
+        
+        <div class="divider"></div>
+        
+        <h2>10. Additional Considerations</h2>
+        
+        <h3>10.1 Security Features</h3>
+        <ul>
+            <li>Password encryption using Laravel's hashing functions</li>
+            <li>CSRF protection for forms</li>
+            <li>Input validation and sanitization</li>
+            <li>Role-based access control</li>
+        </ul>
+        
+        <h3>10.2 Future Enhancements</h3>
+        <ul>
+            <li>Student attendance tracking</li>
+            <li>Grade management system</li>
+            <li>Fee management module</li>
+            <li>Reporting and analytics dashboard</li>
+            <li>Email notifications for enrollments</li>
+            <li>Mobile responsive design</li>
+        </ul>
+        
+        <div class="divider"></div>
+        
+        <p style="text-align: center; margin-top: 40px;"><strong>End of Document</strong></p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    
+    <script>
+        function generateDocx() {
+            const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType } = docx;
+            
+            const sections = [
+                { heading: "Student Management System using Laravel", level: HeadingLevel.TITLE, align: true },
+                { heading: "1. Project Title", level: HeadingLevel.HEADING_1 },
+                { text: "Student Management System", bold: true },
+                { heading: "2. Project Description", level: HeadingLevel.HEADING_1 },
+                { text: "The Student Management System is a web-based application developed using the Laravel framework that helps manage student records efficiently. It allows administrators to add, update, view, and delete student details, manage courses, and handle enrollments. The system provides a centralized platform for educational institutions to maintain and organize student information, course offerings, and enrollment records in a systematic and user-friendly manner." },
+                { heading: "3. Users of the System", level: HeadingLevel.HEADING_1 },
+                { text: "The system is designed to accommodate two types of users:" },
+                { heading: "Primary User:", level: HeadingLevel.HEADING_2 },
+                { text: "Admin – Full administrative privileges to manage all aspects of the system", bullet: true },
+                { heading: "Secondary User (Optional):", level: HeadingLevel.HEADING_2 },
+                { text: "Student – Limited access to view personal information and enrolled courses (if login functionality is implemented)", bullet: true },
+            ];
+            
+            const paragraphs = sections.map(section => {
+                if (section.heading) {
+                    return new Paragraph({
+                        text: section.heading,
+                        heading: section.level,
+                        alignment: section.align ? AlignmentType.CENTER : AlignmentType.LEFT,
+                        spacing: { before: 300, after: 200 }
+                    });
+                } else if (section.bullet) {
+                    return new Paragraph({
+                        text: section.text,
+                        bullet: { level: 0 },
+                        spacing: { after: 100 }
+                    });
+                } else {
+                    return new Paragraph({
+                        children: section.bold ? [new TextRun({ text: section.text, bold: true })] : [new TextRun(section.text)],
+                        spacing: { after: 200 }
+                    });
+                }
+            });
+            
+            const doc = new Document({
+                sections: [{
+                    properties: {},
+                    children: paragraphs
+                }]
+            });
+            
+            Packer.toBlob(doc).then(blob => {
+                saveAs(blob, "Student_Management_System_Laravel.docx");
+                alert("Document downloaded successfully!");
+            });
+        }
+    </script>
+</body>
+</html>
