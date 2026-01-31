@@ -1,0 +1,252 @@
+-- Create database
+CREATE DATABASE university_db;
+USE university_db;
+
+-- Students table
+CREATE TABLE students (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    date_of_birth DATE,
+    enrollment_date DATE DEFAULT CURRENT_DATE,
+    major VARCHAR(100),
+    gpa DECIMAL(3,2) DEFAULT 0.00,
+    total_credits INT DEFAULT 0
+);
+
+-- Courses table
+CREATE TABLE courses (
+    course_id VARCHAR(10) PRIMARY KEY,
+    course_name VARCHAR(100) NOT NULL,
+    department VARCHAR(50),
+    credits INT CHECK (credits BETWEEN 1 AND 5),
+    professor_id INT,
+    max_capacity INT DEFAULT 30,
+    current_enrollment INT DEFAULT 0
+);
+
+-- Professors table
+CREATE TABLE professors (
+    professor_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    department VARCHAR(50),
+    email VARCHAR(100)
+);
+
+-- Enrollment table (Many-to-Many relationship)
+CREATE TABLE enrollments (
+    enrollment_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT,
+    course_id VARCHAR(10),
+    enrollment_date DATE DEFAULT CURRENT_DATE,
+    grade VARCHAR(2),
+    semester VARCHAR(10),
+    academic_year INT,
+    FOREIGN KEY (student_id) REFERENCES students(student_id) ON DELETE CASCADE,
+    FOREIGN KEY (course_id) REFERENCES courses(course_id) ON DELETE CASCADE,
+    UNIQUE(student_id, course_id, semester, academic_year)
+);
+
+-- Grades table
+CREATE TABLE grades (
+    grade_id INT PRIMARY KEY AUTO_INCREMENT,
+    enrollment_id INT,
+    midterm_score DECIMAL(5,2),
+    final_score DECIMAL(5,2),
+    assignment_score DECIMAL(5,2),
+    total_score DECIMAL(5,2),
+    letter_grade VARCHAR(2),
+    FOREIGN KEY (enrollment_id) REFERENCES enrollments(enrollment_id)
+);
+
+-- Insert students
+INSERT INTO students (first_name, last_name, email, date_of_birth, major) VALUES
+('John', 'Smith', 'john.smith@university.edu', '2000-05-15', 'Computer Science'),
+('Sarah', 'Johnson', 'sarah.j@university.edu', '2001-08-22', 'Mathematics'),
+('Michael', 'Chen', 'michael.chen@university.edu', '1999-11-30', 'Physics'),
+('Emily', 'Davis', 'emily.davis@university.edu', '2000-03-10', 'Biology'),
+('David', 'Wilson', 'david.w@university.edu', '2001-01-25', 'Computer Science'),
+('Lisa', 'Brown', 'lisa.brown@university.edu', '2000-07-18', 'Chemistry');
+
+-- Insert professors
+INSERT INTO professors (first_name, last_name, department, email) VALUES
+('Robert', 'Miller', 'Computer Science', 'rmiller@university.edu'),
+('Jennifer', 'Taylor', 'Mathematics', 'jtaylor@university.edu'),
+('William', 'Anderson', 'Physics', 'wanderson@university.edu'),
+('Maria', 'Garcia', 'Biology', 'mgarcia@university.edu');
+
+-- Insert courses
+INSERT INTO courses (course_id, course_name, department, credits, professor_id) VALUES
+('CS101', 'Introduction to Programming', 'Computer Science', 3, 1),
+('CS201', 'Data Structures', 'Computer Science', 4, 1),
+('MATH101', 'Calculus I', 'Mathematics', 4, 2),
+('PHYS101', 'General Physics', 'Physics', 4, 3),
+('BIO101', 'Biology Fundamentals', 'Biology', 3, 4),
+('CS301', 'Database Systems', 'Computer Science', 3, 1);
+
+-- Insert enrollments
+INSERT INTO enrollments (student_id, course_id, semester, academic_year) VALUES
+(1, 'CS101', 'Fall', 2023),
+(1, 'MATH101', 'Fall', 2023),
+(2, 'CS101', 'Fall', 2023),
+(2, 'PHYS101', 'Fall', 2023),
+(3, 'CS201', 'Spring', 2024),
+(3, 'BIO101', 'Spring', 2024),
+(4, 'BIO101', 'Spring', 2024),
+(5, 'CS101', 'Fall', 2023),
+(5, 'CS201', 'Spring', 2024),
+(6, 'MATH101', 'Fall', 2023);
+
+
+
+-- Get all students
+SELECT * FROM students;
+
+-- Get student names and emails
+SELECT first_name, last_name, email 
+FROM students;
+
+-- Students in Computer Science major
+SELECT student_id, first_name, last_name, gpa
+FROM students
+WHERE major = 'Computer Science';
+
+-- Students born after 2000
+SELECT first_name, last_name, date_of_birth
+FROM students
+WHERE date_of_birth > '2000-01-01'
+ORDER BY date_of_birth;
+
+
+
+
+-- Students with their enrolled courses
+SELECT s.first_name, s.last_name, c.course_name, e.enrollment_date
+FROM students s
+JOIN enrollments e ON s.student_id = e.student_id
+JOIN courses c ON e.course_id = c.course_id;
+
+-- Courses with professor information
+SELECT c.course_id, c.course_name, p.first_name, p.last_name as professor_name
+FROM courses c
+LEFT JOIN professors p ON c.professor_id = p.professor_id;
+
+-- All students and their enrollments (including those not enrolled)
+SELECT s.first_name, s.last_name, c.course_name
+FROM students s
+LEFT JOIN enrollments e ON s.student_id = e.student_id
+LEFT JOIN courses c ON e.course_id = c.course_id;
+
+
+
+
+-- Count students per major
+SELECT major, COUNT(*) as student_count
+FROM students
+GROUP BY major
+ORDER BY student_count DESC;
+
+-- Average GPA by major
+SELECT major, AVG(gpa) as average_gpa
+FROM students
+GROUP BY major
+HAVING AVG(gpa) > 3.0;
+
+-- Courses with enrollment count
+SELECT c.course_name, COUNT(e.student_id) as enrolled_students
+FROM courses c
+LEFT JOIN enrollments e ON c.course_id = e.course_id
+GROUP BY c.course_id, c.course_name;
+
+-- Student with highest GPA
+SELECT first_name, last_name, gpa
+FROM students
+WHERE gpa = (SELECT MAX(gpa) FROM students);
+
+
+
+-- Students enrolled in CS101
+SELECT first_name, last_name
+FROM students
+WHERE student_id IN (
+    SELECT student_id 
+    FROM enrollments 
+    WHERE course_id = 'CS101'
+);
+
+-- Courses with more than 2 enrollments
+SELECT course_name
+FROM courses
+WHERE course_id IN (
+    SELECT course_id
+    FROM enrollments
+    GROUP BY course_id
+    HAVING COUNT(*) > 2
+);
+
+-- Students not enrolled in any courses
+SELECT first_name, last_name
+FROM students
+WHERE student_id NOT IN (
+    SELECT DISTINCT student_id 
+    FROM enrollments
+);
+
+
+-- Update student GPA
+UPDATE students 
+SET gpa = 3.75 
+WHERE student_id = 1;
+
+-- Give all CS students a GPA bump
+UPDATE students
+SET gpa = gpa + 0.1
+WHERE major = 'Computer Science';
+
+-- Update course capacity
+UPDATE courses
+SET max_capacity = 35
+WHERE course_id = 'CS101';
+
+-- Delete a student's enrollment
+DELETE FROM enrollments
+WHERE student_id = 6 AND course_id = 'MATH101';
+
+-- Delete a course (will cascade to enrollments)
+DELETE FROM courses
+WHERE course_id = 'BIO101';
+
+
+
+
+-- Enroll student in multiple courses (atomic operation)
+START TRANSACTION;
+
+INSERT INTO enrollments (student_id, course_id, semester, academic_year)
+VALUES (1, 'CS201', 'Spring', 2024);
+
+UPDATE courses 
+SET current_enrollment = current_enrollment + 1
+WHERE course_id = 'CS201';
+
+COMMIT; -- Both operations succeed or fail together
+
+-- Transfer student to different major with rollback
+BEGIN;
+
+UPDATE students 
+SET major = 'Data Science'
+WHERE student_id = 2;
+
+-- Check if Data Science department exists
+SELECT COUNT(*) INTO @dept_count FROM departments 
+WHERE department_name = 'Data Science';
+
+IF @dept_count = 0 THEN
+    ROLLBACK; -- Cancel the change
+    SELECT 'Transaction rolled back - department does not exist';
+ELSE
+    COMMIT;
+END IF;
