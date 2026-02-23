@@ -24,7 +24,7 @@
                 
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <label class="form-label fw-bold">Current Class</label>
+                        <label class="form-label fw-bold">Last Class</label>
                         <input type="text" class="form-control" value="Class 10" readonly>
                     </div>
                     <div class="col-md-6">
@@ -37,21 +37,13 @@
                     <label class="form-label fw-bold">Apply For <span class="text-danger">*</span></label>
                     <select class="form-select" required>
                         <option value="">Select class...</option>
-                        <option value="11_science" selected>Class 11 - Science Stream</option>
-                        <option value="11_commerce">Class 11 - Commerce Stream</option>
-                        <option value="11_arts">Class 11 - Arts Stream</option>
-                        <option value="12_science">Class 12 - Science Stream</option>
-                        <option value="12_commerce">Class 12 - Commerce Stream</option>
+                        @for ($)
+                        
+                        @endfor
                     </select>
                 </div>
 
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Academic Year <span class="text-danger">*</span></label>
-                    <select class="form-select" required>
-                        <option value="2025-2026" selected>2025-2026</option>
-                        <option value="2026-2027">2026-2027</option>
-                    </select>
-                </div>
+               
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">Reason for Application <span class="text-danger">*</span></label>
@@ -107,45 +99,28 @@
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">Sports & Activities</label>
-                    <textarea class="form-control" rows="3">- School Basketball Team (Captain)
-- Music Club - Guitarist
-- Science Club Member
-- Debate Team (Regional Level)</textarea>
+                    <textarea class="form-control" rows="3" placeholder="Cricket , Archary ,etc"></textarea>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">Achievements & Awards</label>
-                    <textarea class="form-control" rows="3">- Best Student Award 2023-2024
-- Science Fair Winner - Regional Level
-- Basketball Tournament Champions 2024
-- Music Competition - 2nd Prize</textarea>
+                    <textarea class="form-control" rows="3" placeholder="Best Student Award 2023-2024, Science Fair Winner - Regional Level, etc."></textarea>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">Future Goals</label>
-                    <textarea class="form-control" rows="3">My short-term goal is to excel in Class 11 and 12 Science stream with a focus on Computer Science. I aim to secure admission in a top engineering college for Computer Science. My long-term career goal is to become a software engineer specializing in artificial intelligence and machine learning. I also plan to develop educational apps to help students learn programming.</textarea>
+                    <textarea class="form-control" rows="3" placeholder="My goal is to be a doctor....."></textarea>
                 </div>
 
                 <hr class="my-4">
 
-                <h5 class="fw-bold mb-3 text-primary">
-                    <i class="fas fa-users me-2"></i>Parent/Guardian Information
-                </h5>
+                
 
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label class="form-label fw-bold">Parent Name</label>
-                        <input type="text" class="form-control" value="Robert Doe" readonly>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label fw-bold">Parent Contact</label>
-                        <input type="tel" class="form-control" value="+1 (555) 987-6543" readonly>
-                    </div>
-                </div>
+                
 
                 <div class="mb-3">
                     <div class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" id="parentConsent" checked>
+                        <input class="form-check-input" type="checkbox" id="parentConsent" required>
                         <label class="form-check-label" for="parentConsent">
                             I confirm that my parent/guardian is aware of this application
                         </label>
